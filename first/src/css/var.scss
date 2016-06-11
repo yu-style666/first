@@ -1,0 +1,17 @@
+//背景颜色  #FD971F #f5deb3  #00ffff #58c5c7
+$back-ground-color: #ccc;
+
+$front-ground-color: darken($back-ground-color,30%);
+
+//字体大小
+$normal-font-size: 12px;
+$small-font-size:$normal-font-size*0.75;
+$big-font-size:$normal-font-size*1.5;
+
+//字体颜色
+$font-back-color: darken($back-ground-color,5%);
+$font-front-color: darken($front-ground-color,60%);
+
+
+
+

@@ -1,0 +1,261 @@
+@import "reset";
+@import "var";
+@import "mixins";
+@import "layout";
+@import "components";
+body {
+    background: $back-ground-color;
+}
+#header {
+    background: $front-ground-color;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    div {
+        flex-grow: 1;
+        align-items: center;
+    }
+    .header-left {
+        padding: 0.75rem 0 0 1rem; 
+        .icon-share{
+            font-size: 2rem;
+            width: 30px;
+            color: #fff;
+        }
+    }
+    .header-center {
+        display: flex;
+        justify-content: center;
+        h1 {
+            font-size: $big-font-size;
+            color: $font-back-color;
+        }
+    }
+    .header-right {
+        padding: 0.75rem 1rem 0 0; 
+        .icon-qrcode{
+            font-size: 2rem;
+            width: 30px;
+            float: right;
+            color: #fff;
+        }
+    }
+}
+#container {
+    position: absolute;
+    top: 45px;
+    bottom: 60px;
+    width: 100%;
+   
+    #swiper1 {
+        height: 100%;
+        border: 1px solid #000;
+        background-image: url("../images/swiper1.jpg");
+            background-size: 100% 100%;
+
+        .page1-1{
+            background-size: 100% 100%;
+            h2 {
+                width: 60%;
+                background: lighten($back-ground-color,10%);
+                margin: 1rem auto;
+                padding: 0.5rem;
+                font-size: 1.8rem;
+                text-align: center;
+                border-radius: 1rem;
+            }
+            h4 {
+                width: 40%;
+                margin: 0.8rem auto;
+                padding: 0.8rem;
+                text-align: center;
+                border-radius: 1rem;
+                color: #ffffff;
+                background: darken($back-ground-color,30%);
+            }
+            ul{
+                padding:0 1rem;
+                li {
+                    line-height: 2rem;
+                    margin:5px 0;
+                    border-radius: 1rem;
+                    text-align: center;
+                    font-weight: 900;
+                }
+                li:nth-child(odd) {
+                    background: #ffffff;
+                }
+                li:nth-child(even) {
+                    background: $front-ground-color;
+                }
+            }
+        }
+        .page1-2{
+            background: #fff;
+            h3{
+                width: 30%;
+                height: 20%;
+                border-radius: 50%;
+                background: url('../images/gif1.gif');
+                background-size: 100% 100%;
+                margin: 15% auto;
+            }
+            .img-list{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                height: 45%;
+                img{
+                    width: 30%;
+                    margin: 3px;
+                    height: 40%;
+                }
+            }
+        }
+    }
+    #swiper2 {
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+    #frame{
+    height: 100%;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .frame{
+            width:50%;
+            height: 33%;
+            background: url(../images/framebg.png);
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .frame-ctn{
+                width: 55%;
+                height: 55%;
+                color: #fff;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    #software {
+        #swiper4{
+            height:13rem;
+            .swiper-wrapper{
+                height: 100%;
+                .swiper-slide{
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        ul{
+            margin-bottom: 70px;
+            li{
+                width: 90%;
+                height: auto;
+                background: #fff;
+                text-align: center;
+                margin: 1rem auto;
+                b{
+                    color: red;
+                    font-size: $big-font-size;
+                }
+            }
+        }
+    }
+    #object{
+        .object{
+        width: 100%;
+        height: 15rem;
+        margin:1rem 0;
+            figure{
+                width:90%;
+                margin:0 auto;
+                height:100%;
+                img{
+                    height:180px;
+                }
+                figcaption{
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+
+}
+#footer {
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $front-ground-color;
+    display: flex;
+    .footer-list {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .tab{
+            font-size: $normal-font-size*1.5;
+            color: $font-back-color;
+            .icon {
+            font-size: $normal-font-size*2;
+        }
+        }
+    }
+}
+#audio_btn{
+    position: fixed;
+    z-index: 2;
+    top: 65px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/normalmusic.svg);
+    background-size: contain;
+}
+.music{
+    -webkit-animation:animate_music 1s linear infinite;
+    @-webkit-keyframes animate_music{
+        0%{-webkit-transform: rotate(0deg);};
+        100%{-webkit-transform: rotate(360deg);}
+    }
+}
+
+#share{
+    position: fixed;
+    z-index: 2;
+    top: 45px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background: green;
+    display: none;
+}
+
+#qrCode{
+    position: fixed;
+    z-index: 2;
+    top: 45px;
+    right: 0px;
+    width: 100px;
+    height: 100px;
+    background: url(../images/QRcode.jpg);
+    background-size: 100% 100%;
+    display: none;
+}
+
